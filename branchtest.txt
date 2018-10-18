@@ -1,2 +1,0 @@
-Hello, World!
-This file is being edited from the "Branchtest" branch.
