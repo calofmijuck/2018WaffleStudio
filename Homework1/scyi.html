@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>11th Team</title>
+    </head>
+    <body>
+        <div id="profile">
+            <img id="profimg" src="img/profimag.jpg"/>
+            <span id="title">Hi! I'm Sungchan Yi!</span>
+            <p>
+                <ul>
+                    <li><b>Name</b>: 이성찬, calofmijuck (a.k.a <b><span id="z">z</span><span id="x">x</span><span id="c">c</span><span id="v">v</span><span id="b">b</span><span id="e">e</span><span id="r">r</span></b>, 미적분30일) </li>
+                    <li>Major: Computer Science and Engineering</li>
+                    <li>Email: calofmijuck@snu.ac.kr</li>
+                </ul>
+            </p>
+            <br>
+            <span id="title" style="font-size:130%!important">Additional Information</span>
+            <p>
+                <ul>
+                    <li><b>BOJ</b>: <a href="https://www.acmicpc.net/user/zxcvber">zxcvber</a></li>
+                    <li><b>2014. 3. ~ 2017. 2.</b> Hana Academy Seoul (Graduated)</li>
+                    <li><b>2017. 3. ~ Now.</b> Seoul National University, Dept. of Computer Science and Engineering</li>
+                </ul>
+            </p>
+            <br>
+            <span id="title" style="font-size:130%!important">Skills</span>
+            <p>
+                <ul>
+                    <li>C/C++</li>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>HTML, CSS, Javascript</li>
+                    <li>Numerical Analysis with MATLAB</li>
+                </ul>
+            </p>
+            <br>
+            <span id="title" style="font-size:130%!important">Social</span>
+            <p>
+                <b>Follow me anywhere!</b><br><br>
+                <a href="https://github.com/calofmijuck"><img id="icon" src="img/github-icon.jpg"/></a>
+                <a href="#"><img id="icon" src="img/kt-icon.PNG"/></a>
+                <a href="https://www.facebook.com/sungchan1012"><img id="icon" src="img/fb-icon.PNG"/></a>
+                <a href="#"><img id="icon" src="img/twt-icon.PNG"/></a>
+                <a href="https://www.youtube.com/channel/UCjk7eHA_S2HfI586XivxJgA"><img id="icon" src="img/yt-icon.PNG"/></a>
+
+            </p>
+        </div>
+
+
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700');
+            a#nav {
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+                font-size: 120%;
+            }
+            a {
+                text-decoration: none;
+            }
+            a:visited {
+                color: blue;
+            }
+            td#nav {
+                padding: 0px 15px 0px 15px;
+                text-align: center;
+            }
+            nav {
+                background-color: #80808038;
+                padding: 5px 0px 5px 0px;
+            }
+            table#nav {
+                /* width: 100%; */
+                display: float;
+                height: 40%;
+            }
+            body {
+                padding: 5px 0px 0px 0px;
+                margin: 0px 0px 0px 0px;
+                font-family: 'Nanum Gothic';
+
+            }
+            img#profimg {
+                width: 400px;
+                height: 400px;
+                float: right;
+                padding-right: 20px;
+            }
+            img#icon {
+                width: 60px;
+                height: 60px;
+                padding-right: 5px;
+            }
+            div#profile {
+                padding-left: 20px;
+                font-family: 'Sans Serif', 'Nanum Gothic';
+            }
+            span#title {
+                font-weight: bold;
+                font-size: 150%;
+                font-family: 'Sans Serif';
+            }
+            li {
+                margin: 7px 0px 0px 0px;
+                font-size: 110%;
+            }
+        </style>
+
+        <script>
+        	var myVar = setInterval(function(){ colorful() }, 70);
+        	var colors = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
+        	var j = 0;
+        	function colorful() {
+        	    document.getElementById("z").style.color = colors[j % 7];
+            	document.getElementById("x").style.color = colors[(j+1) % 7];
+            	document.getElementById("c").style.color = colors[(j+2) % 7];
+            	document.getElementById("v").style.color = colors[(j+3) % 7];
+            	document.getElementById("b").style.color = colors[(j+4) % 7];
+            	document.getElementById("e").style.color = colors[(j+5) % 7];
+            	document.getElementById("r").style.color = colors[(j+6) % 7];
+            	j = (j + 1) % 7
+        	}
+        </script>
+    </body>
+</html>
