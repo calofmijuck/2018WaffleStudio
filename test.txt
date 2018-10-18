@@ -1,2 +1,0 @@
-Hello, World!
-I am going to create a conflit in merge request.
