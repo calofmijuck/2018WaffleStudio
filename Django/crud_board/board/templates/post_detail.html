@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ object.title }}</title>
+  </head>
+  <body>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <h3>{{ object.title }}</h3>
+    <div class="nav">
+      <ul>
+        {% if object.get_previous_by_created_at %}
+        <li>
+          <b>이전글</b> :
+          <a href="{% url 'post-detail' object.get_previous_by_created_at.pk %}">
+            {{ object.get_previous_by_created_at.title }}
+          </a>
+        </li>
+        {% endif %}
+        {% if object.get_next_by_created_at %}
+        <li>
+          <b>다음글</b> :
+          <a href="{% url 'post-detail' object.get_next_by_created_at.pk %}">
+            {{ object.get_next_by_created_at.title }}
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="header">
+      <b>작성자</b> : {{ object.author }}<br>
+      <b>작성 시각</b> : {{ object.created_at|date:"D d M Y, H:i:s" }}<br>
+      {% if object.created_at != object.modified_at %}
+      <b>수정 시각</b> : {{ object.modified_at|date:"D d M Y, H:i:s" }}<br>
+      <b>조회수</b> : {{ object.hits }}<br>
+      {% endif %}
+    </div>
+    <br>
+    <div class="content">
+      {{ object.content|linebreaks }}
+    </div>
+    <br>
+    <div class="footer">
+      <p id="icon"><a href="{% url 'index' %}">Main</a></p>
+      <p id="icon"><a href="{% url 'post-update' object.pk %}">Edit</a></p>
+      <p id="icon"><a href="{% url 'post-delete' object.pk %}">Delete</a></p>
+    </div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&subset=korean');
+        @font-face {
+            font-family: 'Nanum Gothic';
+        }
+        body {
+            font-family: 'Nanum Gothic';
+            font-size: 130%;
+        }
+        a:visited {
+            text-decoration: none;
+            color: blue;
+        }
+        a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+        p#icon {
+            width: 100px;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+  </body>
+
+</html>

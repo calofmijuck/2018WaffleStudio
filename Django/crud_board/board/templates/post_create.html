@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="create_form" method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" name="submit" value="Post" style="width:50px;height:30px;font-size:80%;">
+    </form>
+    <style>
+        body {
+            font-size: 130%;
+        }
+        
+    </style>
+  </body>
+</html>

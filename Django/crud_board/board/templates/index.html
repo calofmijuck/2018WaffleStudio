@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Board</title>
+  </head>
+  <body>
+    <div class="posts">
+      <h2>Posts</h2>
+      <p id="info">총 {{ post_num }}개의 포스트가 있습니다.</p>
+      <h3>Recent Posts</h3>
+        <table id="post">
+      {% if recent_posts %}
+        <tr id="top">
+            <td id="num"><b>번호</b></td>
+            <td id="title"><b>제목</b></td>
+            <td id="author"><b>작성자</b></td>
+            <!-- <td id="time">시간</td> -->
+            <td id="hits"><b>조회수</b></td>
+        </tr>
+        {% for post in recent_posts %}
+        <tr id="rows">
+            <td id="num">{{ post.pk }}</td>
+            <td id="title"><a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></td>
+            <td id="author">{{ post.author }}</td>
+            <!-- <td>{{ post.created_at }}</td> -->
+            <td id="hits">{{ post.hits }}</td>
+        </tr>
+        {% endfor %}
+      {% else %}
+        <span style="font-weight:bold;color:green;">There are no recent posts.</span>
+      {% endif %}
+        </table>
+      <p id="icon"><a id="icon" href="{% url 'post-create' %}">Write</a></p>
+    </div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&subset=korean');
+        @font-face {
+            font-family: 'Nanum Gothic';
+        }
+        div.posts {
+            font-family: 'Nanum Gothic';
+            font-size: 130%;
+        }
+        a:visited {
+            text-decoration: none;
+            color: blue;
+        }
+        a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+        p#icon {
+            width: 100px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        tr#top {
+            border-bottom: 3px solid black;
+            text-align:center;
+            height: 40px;
+        }
+        tr#rows {
+            border-bottom: 1px dotted grey;
+            height: 35px;
+        }
+        td#num {
+            width: 50px;
+            text-align: center;
+            border-right: 1px dotted grey;
+        }
+        td#title {
+            padding-left: 10px;
+            width: 600px;
+            border-right: 1px dotted grey;
+        }
+        td#author {
+            width: 125px;
+            text-align: center;
+            border-right: 1px dotted grey;
+        }
+        td#hits {
+            width: 125px;
+            text-align: center;
+        }
+    </style>
+  </body>
+</html>

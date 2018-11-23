@@ -2,6 +2,9 @@
 import os
 import sys
 
+# admin : zxcvber pswd: 123456
+
+
 if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mySite.settings')
     try:
