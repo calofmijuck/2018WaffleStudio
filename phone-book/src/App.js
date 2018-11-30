@@ -3,20 +3,22 @@ import PhoneForm from './components/PhoneForm';
 import PhoneInfoList from './components/PhoneInfoList';
 
 class App extends Component {
-    id = 2
+    id = 1
     state = {
         information: [
-      {
-        id: 0,
-        name: '김민준',
-        phone: '010-0000-0000'
-      },
-      {
-        id: 1,
-        name: '홍길동',
-        phone: '010-0000-0001'
-      }
-    ]
+            {
+                id: 0,
+                name: '이성찬',
+                phone: '010-0000-0000'
+            }
+        ],
+        keyword: ''
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            keyword: e.target.value,
+        });
     }
 
     handleCreate = (data) => {
@@ -45,14 +47,32 @@ class App extends Component {
     }
 
     render() {
-        const { information } = this.state;
+        const { information, keyword } = this.state;
+        const filteredList = information.filter(
+            info => info.name.indexOf(keyword) !== -1
+        );
+        const style = {
+            fontSize: '130%'
+        }
+        const search = {
+            height: '30px'
+        }
         return (
-            <div>
+            <div style={style}>
                 <PhoneForm
                     onCreate={this.handleCreate}
                 />
+                <p>
+                    <input
+                        style={search}
+                        placeholder="Search..."
+                        onChange={this.handleChange}
+                        value={keyword}
+                    />
+                </p>
+                <hr />
                 <PhoneInfoList
-                    data={information}
+                    data={filteredList}
                     onRemove={this.handleRemove}
                     onUpdate={this.handleUpdate}
                 />

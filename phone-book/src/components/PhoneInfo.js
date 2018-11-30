@@ -9,6 +9,14 @@ class PhoneInfo extends Component {
         }
     }
 
+    // not in edit mode and if info values are the same, do not re-render
+    shouldComponentUpdate(nextProps, nextState) {
+        if (!this.state.editing && !nextState.editing && nextProps.info === this.props.info) {
+            return false;
+        }
+        return true; // else re-render
+    }
+
     state = {
         // When edit button is clicked, editing value is set to true
         // when this value is true, this will be shown in <input> form
@@ -103,7 +111,6 @@ class PhoneInfo extends Component {
                 <div><b>{name}</b></div>
                 <div>{phone}</div>
                 <button onClick={this.handleToggleEdit}>Edit</button>
-
                 <button onClick={this.handleRemove}>Delete</button>
             </div>
         );

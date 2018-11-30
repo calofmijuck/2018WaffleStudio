@@ -25,20 +25,32 @@ class PhoneForm extends Component {
     }
 
     render() {
+        const nameStyle = {
+            height: '30px',
+            width: '300px'
+        }
+
+        const phoneStyle = {
+            height: '75px',
+            width: '500px',
+        };
+
         return (
             <form onSubmit={this.handleSubmit}>
                 <input
+                    style={nameStyle}
                     placeholder="Name"
                     value={this.state.name}
                     onChange={this.handleChange}
                     name="name"
-                />
+                /><br/>
                 <input
+                    style={phoneStyle}
                     placeholder="Phone Number"
                     value={this.state.phone}
                     onChange={this.handleChange}
                     name="phone"
-                />
+                /><br/>
                 <button type="submit">Submit</button>
                 <div>{this.state.name} {this.state.phone}</div>
             </form>
