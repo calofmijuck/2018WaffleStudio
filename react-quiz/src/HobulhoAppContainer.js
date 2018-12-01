@@ -5,24 +5,40 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            author: "Tester",
+            author: "이성찬",
             questions: [
                 {
-                    subject: "메밀소바",
+                    subject: "마카롱",
                     choice: "dislike"
                 },
                 {
-                    subject: "데자와",
+                    subject: "돼지껍데기",
+                    choice: "dislike"
+                },
+                {
+                    subject: "메밀소바",
                     choice: "like"
                 },
-                // {
-                //     subject: "녹차 아이스크림",
-                //     choice: "like"
-                // },
-                // {
-                //     subject: "회",
-                //     choice: "dislike"
-                // }
+                {
+                    subject: "곱창",
+                    choice: "like"
+                },
+                {
+                    subject: "데자와",
+                    choice: "dislike"
+                },
+                {
+                    subject: "민트 초코 아이스크림",
+                    choice: "like"
+                },
+                {
+                    subject: "회",
+                    choice: "like"
+                },
+                {
+                    subject: "오이",
+                    choice: "like"
+                }
             ]
         };
     }

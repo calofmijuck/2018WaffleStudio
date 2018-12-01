@@ -11,7 +11,11 @@ class Result extends Component {
         );
         let qcount = this.props.authorAnswer.length;
         let score = Math.round(100 * correct / qcount);
+        let msg;
 
+        if(score === 100) {
+            msg = <b>와!! 저랑 맛있는거 먹으러 가요!!</b>;
+        }
         return (
             <div>
                 <h1>{this.props.author}님과의 호불호 일치도입니다!</h1>
@@ -19,13 +23,21 @@ class Result extends Component {
                     <span className="display-1">{score}</span>점<br />
                     <span className="display-6">총 {qcount}개 중 {correct}개 일치</span>
                 </div>
+                { msg }
                 <hr />
+                {/* <h3>
+                {this.props.author}:&nbsp;
+                {this.props.authorAnswer.map(
+                    (x, i) => <Answer key={i} {...x} />
+                )}
+                </h3> <hr />*/}
                 <h3>
-                {this.props.user}님:&nbsp;
+                {this.props.user} 님:&nbsp;
                 {this.props.userAnswer.map(
                     (x, i) => <Answer key={i} {...x} />
                 )}
                 </h3>
+
                 <div>
                     <input className="stbtn"
                         type="button"

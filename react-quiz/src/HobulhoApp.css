@@ -18,6 +18,7 @@
     height: 50px;
     border-style: none;
     border-radius: 5px;
+    margin-top: 10px;
 }
 
 .ybtn {
@@ -53,6 +54,14 @@
     box-shadow: 0 0 10px red;
 }
 
+.ybtn:focus {
+    outline-width: 0;
+}
+
+.nbtn:focus {
+    outline-width: 0;
+}
+
 #username {
     width: 300px;
     height: 40px;
@@ -78,8 +87,8 @@ span.like {
     border-radius: 5px;
     margin-left: 5px;
     margin-right: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 span.dislike {
@@ -88,8 +97,8 @@ span.dislike {
     border-radius: 5px;
     margin-left: 5px;
     margin-right: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 h1 {
@@ -114,9 +123,12 @@ div.progress {
 }
 
 div.bar {
-    background-color: royalblue;
+    background-color: #4169e1cc;
     color: white;
-    font-size: 50%;
+    font-size: 75%;
     border-radius: 15px;
+}
 
+div.ans {
+    display: inline-block;
 }

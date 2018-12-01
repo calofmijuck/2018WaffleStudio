@@ -10,7 +10,7 @@ class Question extends Component {
     }
 
     render() {
-        let prog = (this.props.qindex + 1) / this.props.qcount * 100;
+        let prog = Math.floor((this.props.qindex + 1) / this.props.qcount * 1000) / 10;
         let style = {
             width: prog + '%',
         }
@@ -28,7 +28,7 @@ class Question extends Component {
                         </div>
                     </div>
                 </div><br/>
-                <h1>{this.props.subject}?</h1><br/>
+                <h1>{this.props.subject}</h1><br/>
                 <input className="ybtn"
                     type="button"
                     value="호"

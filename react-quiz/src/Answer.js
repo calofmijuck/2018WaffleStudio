@@ -8,9 +8,11 @@ const ANSWER_CLASS = {
 class Answer extends Component {
     render() {
         return (
-            <span className={ANSWER_CLASS[this.props.choice]}>
-            {this.props.subject}
-            </span>
+            <div className="ans">
+                <span className={ANSWER_CLASS[this.props.choice]}>
+                {this.props.subject}
+                </span>
+            </div>
         );
     }
 }
