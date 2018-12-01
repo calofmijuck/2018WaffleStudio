@@ -101,3 +101,22 @@ hr {
     width: 600px;
     color: lightgrey;
 }
+
+div.col {
+    font-size: 120%;
+}
+
+div.progress {
+    margin: 10px auto 0px auto;
+    width: 500px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+div.bar {
+    background-color: royalblue;
+    color: white;
+    font-size: 50%;
+    border-radius: 15px;
+
+}

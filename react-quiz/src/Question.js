@@ -10,15 +10,22 @@ class Question extends Component {
     }
 
     render() {
-
+        let prog = (this.props.qindex + 1) / this.props.qcount * 100;
+        let style = {
+            width: prog + '%',
+        }
         return (
             <div>
                 <div className="row">
                     <div className="col">
                         {this.props.author}
                     </div>
-                    <div className="col-right">
+                    <div className="status">
                     {this.props.qindex+1} / {this.props.qcount}
+                    </div>
+                    <div className="progress">
+                        <div className="bar" style={style}>{ prog }%
+                        </div>
                     </div>
                 </div><br/>
                 <h1>{this.props.subject}?</h1><br/>
