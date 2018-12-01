@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './HobulhoApp.css';
 
 class InputName extends Component {
     constructor(props) {
@@ -15,12 +16,16 @@ class InputName extends Component {
                 <hr />
                 <form onSubmit={() => this.props.handleUserName(this.state.name)}>
                     <div className="form-group">
-                        <label for="username">당신의 이름을 입력해주세요.</label>
-                        <input id="username" className="form-control" type="text" required
+                        <label htmlFor="username">당신의 이름을 입력해주세요.</label>
+                        <br/>
+                        <input id="username"
+                        placeholder="이름"
+                        className="form-control" type="text" required
                             value={this.state.name}
                             onChange={(evt) => this.setState({name: evt.target.value})} />
                     </div>
-                    <input className="btn btn-primary" type="submit" value="시작하기!" />
+                    <br/>
+                    <input className="stbtn" type="submit" value="시작하기!" />
                 </form>
             </div>
         );

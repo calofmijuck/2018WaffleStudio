@@ -39,7 +39,7 @@ class HobulhoApp extends Component {
     render() {
         let qcount = this.props.questions.length;
         return (
-            <div className="app-container jumbotron">
+            <div className="app-container">
             {!this.state.user ?
                 <InputName
                 author={this.props.author}
@@ -57,7 +57,7 @@ class HobulhoApp extends Component {
                         authorAnswer={this.props.questions}
                         user={this.state.user}
                         userAnswer={this.state.userAnswer}
-                        reset={this.reset.bind(this)} 
+                        reset={this.reset.bind(this)}
                     />
                 )
             }

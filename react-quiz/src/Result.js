@@ -27,7 +27,7 @@ class Result extends Component {
                 )}
                 </h3>
                 <div>
-                    <input className="btn btn-primary"
+                    <input className="stbtn"
                         type="button"
                         value="다시하기!"
                         onClick={this.props.reset}

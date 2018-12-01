@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './HobulhoApp.css';
 
 class Question extends Component {
     answer(what) {
@@ -16,17 +17,17 @@ class Question extends Component {
                     <div className="col">
                         {this.props.author}
                     </div>
-                    <div className="col text-right">
+                    <div className="col-right">
                     {this.props.qindex+1} / {this.props.qcount}
                     </div>
-                </div>
-                <h1>{this.props.subject}?</h1>
-                <input className="btn btn-lg btn-success btn-block"
+                </div><br/>
+                <h1>{this.props.subject}?</h1><br/>
+                <input className="ybtn"
                     type="button"
                     value="호"
                     onClick={this.answer.bind(this,"like")}
-                />
-                <input className="btn btn-lg btn-danger btn-block"
+                /><br/>
+                <input className="nbtn"
                     type="button"
                     value="불호"
                     onClick={this.answer.bind(this,"dislike")}
