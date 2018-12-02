@@ -12,7 +12,8 @@ class InputName extends Component {
     render() {
         return (
             <div>
-                <h1>{this.props.author}님의 호불호를 알아보아요!</h1>
+                <h1>{this.props.author}님의 호불호와 비교해 보세요!</h1>
+                <p>질문들에 대해 여러분의 취향대로 답해주시면 됩니다!</p>
                 <hr />
                 <form onSubmit={() => this.props.handleUserName(this.state.name)}>
                     <div className="form-group">

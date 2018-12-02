@@ -14,7 +14,7 @@ class Result extends Component {
         let msg;
 
         if(score === 100) {
-            msg = <b>와!! 저랑 맛있는거 먹으러 가요!!</b>;
+            msg = <b>와!! 저랑 완벽하게 일치하시는군요! 저랑 맛있는거 먹으러 가요!! 스크린샷과 함께 연락주세요!!</b>;
         }
         return (
             <div>
@@ -32,7 +32,7 @@ class Result extends Component {
                 )}
                 </h3> <hr />*/}
                 <h3>
-                {this.props.user} 님:&nbsp;
+                {this.props.user} 님의 호불호:&nbsp;
                 {this.props.userAnswer.map(
                     (x, i) => <Answer key={i} {...x} />
                 )}
