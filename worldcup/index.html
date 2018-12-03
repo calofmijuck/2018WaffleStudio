@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>포켓몬 이상형 월드컵</title>
+    </head>
+    <body>
+        <p>
+            <b>포켓몬스터 이상형 월드컵!</b>
+        </p>
+        <div>
+            <form onsubmit="return false">
+                <input id="8" type="radio" name="sel" value="8">8강<br>
+                <input id="16" type="radio" name="sel" value="16">16강<br>
+                <input id="32" type="radio" name="sel" value="32">32강<br>
+                <input id="64" type="radio" name="sel" value="64">64강<br>
+                <button onclick="main()">확인</button>
+            </form>
+        </div>
+        <div id="progress">
+            <div id="bar" style="">0%</div>
+        </div>
+        <p>더 선호하는 포켓몬을 클릭!</p>
+        <div id="main" style="display:none;">
+            <img id="left" src="" alt="Not found" onclick="left()"/> <img id="right" src="" alt="Not found" onclick="right()"/>
+        </div>
+        <div id="result" style="display:none;">
+            우승자!<br>
+            <img id="res" src="" alt="Not found"/>
+        </div>
+    </body>
+
+    <style>
+        div#progress {
+            margin: 10px auto 0px auto;
+            width: 70%;
+            border-radius: 10px;
+            font-size: 50%;
+            border: 1px solid black;
+        }
+        div#bar {
+            margin: 0px 0px 0px 0px;
+            width: 0px;
+            background-color: royalblue;
+            border-radius: inherit;
+            color: white;
+            font-weight: bold;
+        }
+        body {
+            text-align: center;
+            font-size: 150%;
+        }
+        img {
+            height: 200px;
+            width: auto;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+    </style>
+
+    <script>
+        var maxN = 721;
+        var count = 0;
+        var list = [];
+        var loc = "img/";
+        var gif = ".gif";
+        var first, second;
+        var curr = 0, total;
+
+        function main() {
+            if(document.getElementById('8').checked) {
+                count = Number(document.getElementById('8').value);
+            } else if(document.getElementById('16').checked) {
+                count = Number(document.getElementById('16').value);
+            } else if(document.getElementById('32').checked) {
+                count = Number(document.getElementById('32').value);
+            } else if(document.getElementById('64').checked) {
+                count = Number(document.getElementById('64').value);
+            } else {
+                alert("선택해주세요!");
+                return;
+            }
+            list = [];
+            total = count - 1;
+            curr = 0;
+            generate();
+            document.getElementById('main').style.display = "block";
+            document.getElementById('result').style.display = "none";
+            run();
+        }
+        function randint() {
+            return Math.floor(Math.random() * maxN) + 1;
+        }
+
+        function generate() {
+            for(i = 0; i < count; i += 1)
+                list.push(randint())
+        }
+
+        function run() {
+            curr += 1;
+            bar();
+            first = list[0];
+            if(list.length < 2) {
+                curr -= 1;
+                bar();
+                document.getElementById('main').style.display = "none";
+                document.getElementById('result').style.display = "block";
+                document.getElementById('res').src = loc + first + gif;
+                return;
+            }
+            second = list[1];
+            list.shift(); list.shift();
+            document.getElementById('left').src = loc + first + gif;
+            document.getElementById('right').src = loc + second + gif;
+        }
+
+        function left() {
+            list.push(first);
+            run();
+        }
+
+        function right() {
+            list.push(second);
+            run();
+        }
+
+        function bar() {
+            var len = Math.floor(curr / total * 1000) / 10;
+            document.getElementById('bar').style.width = String(len) + "%";
+            document.getElementById('bar').innerHTML = String(len) + "%";
+        }
+    </script>
+</html>
