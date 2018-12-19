@@ -1,29 +1,36 @@
 /*------------------------------------------------------------------
 Project:  ComingSoon
-Version:  
-Last change:  
+Version:
+Last change:
 Assigned to:  Bach Le
-Primary use:  
+Primary use:
 -------------------------------------------------------------------*/
 
 
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&subset=korean');
+@font-face {
+    font-family: 'Nanum Gothic';
+}
 
 @font-face {
   font-family: Lato-Regular;
-  src: url('../fonts/Lato/Lato-Regular.ttf'); 
+  src: url('../fonts/Lato/Lato-Regular.ttf');
+  unicode-range: U+0020-007F;
 }
 
 @font-face {
   font-family: Lato-Hairline;
-  src: url('../fonts/Lato/Lato-Hairline.ttf'); 
+  src: url('../fonts/Lato/Lato-Hairline.ttf');
+  unicode-range: U+0020-007F;
 }
 
 @font-face {
   font-family: PlayfairDisplay-Italic;
-  src: url('../fonts/PlayfairDisplay/PlayfairDisplay-Italic.ttf'); 
+  src: url('../fonts/PlayfairDisplay/PlayfairDisplay-Italic.ttf');
+  unicode-range: U+0020-007F;
 }
 
 
@@ -76,7 +83,7 @@ Primary use:
 /*//////////////////////////////////////////////////////////////////
 [ M-Text 16 - 25 ]*/
 .m1-txt1 {
-  font-family: Lato-Regular;
+  font-family: 'Nanum Gothic', Lato-Regular;
   font-size: 18px;
   color: #555;
   line-height: 1.2;
@@ -84,7 +91,7 @@ Primary use:
 }
 
 .m1-txt2 {
-  font-family: PlayfairDisplay-Italic;
+  font-family: PlayfairDisplay-Italic, 'Nanum Gothic';
   font-size: 18px;
   color: #fff;
   line-height: 1;
@@ -166,7 +173,7 @@ Primary use:
 
 
 /*==================================================================
-   WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE  
+   WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE
 ==================================================================*/
 .where1 {
   align-self: flex-start;
@@ -175,7 +182,7 @@ Primary use:
 
 
 /*==================================================================
- HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW 
+ HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW
 ==================================================================*/
 .placeholder0::-webkit-input-placeholder { color: #999999;}
 .placeholder0:-moz-placeholder { color: #999999;}
@@ -380,7 +387,7 @@ Primary use:
     max-width: 170px;
   }
 
-  
+
 }
 
 
