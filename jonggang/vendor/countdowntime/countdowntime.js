@@ -16,6 +16,11 @@
 
         var options =  $.extend(defaults, options);
 
+        // array for storing deadline times
+        var todo = [
+            new Date('2018-12-19T10:50:00'),
+        ];
+
         return this.each(function() {
           var obj = $(this);
           var timeNow = new Date();
@@ -91,10 +96,7 @@
             var timeinterval = setInterval(updateClock, 1000);
           }
 
-          // array for storing deadline times
-          var todo = [
-              new Date('2018-12-19T16:50:00'),
-          ];
+
 
           function checkTodo() {
               // check todo list
