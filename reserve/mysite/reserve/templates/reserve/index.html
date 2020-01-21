@@ -1,0 +1,18 @@
+{% if error_message %}
+    <p>{{ error_message }}</p>
+{% endif %}
+
+{% if date_list %}
+    <ul>
+        {% for d in date_list %}
+            <li>
+                {{d.date}}: {{d.curr}} / {{d.max_capacity}}
+                {% if d.curr != d.max_capacity %}
+                    <a href="/reserve/{{ d.id }}/">신청</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>예약 가능한 날짜가 없습니다.</p>
+{% endif %}
